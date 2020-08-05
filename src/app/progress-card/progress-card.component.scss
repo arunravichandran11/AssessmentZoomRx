@@ -1,0 +1,124 @@
+.progress-card-container {
+  width: 272px;
+  margin: 0 4px;
+  height: 100%;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    cursor: pointer;
+    margin: 0px 12px;
+  }
+}
+
+button {
+  width: 80px;
+  height: 20px;
+  margin: 0px 12px;
+  background-color: lightblue;
+  box-shadow: none;
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  transition: transform 0.2s linear;
+
+  &:hover {
+    transform: scale(1.5);
+  }
+}
+
+.progress-wrapper {
+  background-color: #ebecf0;
+  border-radius: 3px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  position: relative;
+  white-space: normal;
+  padding: 8px;
+}
+
+.add-new-item {
+  min-height: 38px;
+  max-height: 38px;
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0px;
+
+  div {
+    width: 100%;
+  }
+
+  a {
+    border-radius: 3px;
+    color: #5e6c84;
+    display: block;
+    padding: 4px 8px;
+    position: relative;
+    text-decoration: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .add-button {
+  }
+}
+
+.items-holder {
+  padding: 40px 0px;
+  min-height: 40px;
+}
+
+.items-to-work {
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  max-width: 300px;
+  min-height: 20px;
+  position: relative;
+  text-decoration: none;
+  margin: 8px auto;
+  padding: 8px;
+
+  .item-name {
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+.new-card-content {
+  p {
+    overflow: hidden scroll;
+    overflow-wrap: break-word;
+    resize: none;
+    max-height: 162px;
+    background: none;
+    border: none;
+    box-shadow: none;
+    margin-bottom: 4px;
+    max-height: 162px;
+    min-height: 54px;
+    padding: 0;
+    width: 100%;
+    outline: none;
+  }
+}

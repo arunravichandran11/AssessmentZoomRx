@@ -1,0 +1,12 @@
+<div class="board-wrapper">
+  <h1>Board</h1>
+  <div class="board-container">
+    <div *ngFor="let stage of stagesOfWork">
+      <app-progress-card [stage]="stage" (onStorySelection)="openStoryCard($event)"></app-progress-card>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="showCardDetails">
+  <app-story-card (onClose)="closeStoryCard($event)" [stage]="selectedStage" [story]="seletedStory"></app-story-card>
+</div>

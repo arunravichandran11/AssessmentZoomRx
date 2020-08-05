@@ -1,0 +1,72 @@
+<div class="progress-card-container">
+  <div class="progress-wrapper">
+    <div class="progress-header">
+      <div class="label">
+        {{stage.name}}
+      </div>
+      <div>
+        <a (click)="deleteStage()">
+          <i class="fa fa-trash-o fa-1x"></i>
+        </a>
+      </div>
+    </div>
+    <div class="progress-content">
+      <div class="add-new-item" *ngIf="!stage.items.length">
+        <div>
+          <a (click)="editCard($event)" class="add-button">
+            <span>Add a Story</span>
+            <i class="fa fa-plus fa-1x"></i>
+          </a>
+        </div>
+      </div>
+
+      <div
+        id="items-holder"
+        #itemsHolder
+        class="items-holder"
+        (drop)="onDrop($event)"
+        (dragenter)="onDragEnterTarget($event)"
+        (dragover)="onDragOverTarget($event)"
+        (dragleave)="onDragLeaveTarget($event)"
+      >
+        <div
+          #dragItem
+          class="items-to-work"
+          *ngFor="let item of stage.items"
+          [attr.id]="item.id"
+          draggable="true"
+          (dragstart)="onDragStart($event)"
+          (dragend)="onDragEnd($event)"
+          (drag)="onDrag($event)"
+          (click)="editCard($event, item)"
+        >
+          <div class="item-name">
+            {{item.title}}
+          </div>
+          <a (click)="editCardTitle()">
+            <i class="fa fa-pencil fa-1x"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="new-card-content" *ngIf="showNewCardEditor">
+        <div class="items-to-work">
+          <p contenteditable="true" (input)="editCardTitle($event)"></p>
+        </div>
+        <div>
+          <button (click)="addNewItem()">Add Card</button>
+          <button (click)="closeNewCardEditor()">Close</button>
+        </div>
+      </div>
+
+      <div class="add-new-item" *ngIf="stage.items.length">
+        <div>
+          <a (click)="editCard($event)">
+            <span>Add another Story/Task</span>
+            <i class="fa fa-plus fa-1x"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

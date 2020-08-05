@@ -1,0 +1,36 @@
+<div class="story-card-container">
+  <div class="modal" (click)="closeModal($event)">
+    <div class="modal-content" (click)="modalContentClick($event)">
+      <div class="button-container">
+        <button class="save-button" (click)="saveStoryInformation($event)">Save</button>
+        <button class="delete-button" (click)="deleteStory($event)">Delete Card</button>
+      </div>
+      <h3 class="title">{{cardInformation.title ? cardInformation.title : 'card title'}}</h3>
+
+      <div class="description" *ngIf="!story">
+        <textarea name="description" class="titele" placeholder="Card Title" [(ngModel)]="cardInformation.title"></textarea>
+      </div>
+
+      <div class="description">
+        <textarea name="description" class="description" placeholder="Card Description" [(ngModel)]="cardInformation.description"></textarea>
+      </div>
+
+      <div class="comments-input">
+        <textarea name="comments" class="comments" placeholder="Enter Comments" [(ngModel)]="storyComment"></textarea>
+        <div>
+          <button (click)="addComments()">Add Comment</button>
+        </div>
+
+        <div class="comments">
+          <h4>Comments</h4>
+          <ul>
+            <li *ngFor="let comment of cardInformation.allComments">
+              <span>{{comment.description}}</span>
+              <span>{{comment.date}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
